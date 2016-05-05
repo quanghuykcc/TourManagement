@@ -15,7 +15,7 @@
             	?>
               <li class="list-group-item">
                 <i class="fa fa-suitcase"></i>&nbsp;
-                <a href="" title=""><?php echo $aritem['NameTour']?></a>
+                <a href="/www/tour/?module=ql_tour&action=detail_tour&IdTour=<?php echo $aritem['IdTour']?>" title=""><?php echo $aritem['NameTour']?></a>
               </li>
               <?php }?>
             </ul>

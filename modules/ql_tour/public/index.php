@@ -113,7 +113,7 @@
                 </div>
               </div>
               <div class="col-xs-12 col-md-8">
-                <a href="" class="text-uppercase"><?php  echo $arItemTour['NameTour']?></a>
+                <a href="/www/tour/?module=ql_tour&action=detail_tour&IdTour=<?php echo $arItemTour['IdTour']?>" class="text-uppercase"><?php  echo $arItemTour['NameTour']?></a>
                 <p class="icn-tour">
                   <?php 
                   $khoihanhformat = $arItemTour['Departure'];
