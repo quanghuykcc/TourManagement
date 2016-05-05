@@ -1,12 +1,17 @@
 <?php 
 include $_SERVER['DOCUMENT_ROOT'].'/www/tour/autoload_public.php'; 
-?>	 
+?>	
+
 <?php 
 include $_SERVER['DOCUMENT_ROOT'].'/www/tour/templates/public/tour/header.php';
 ?> 
+
+
 <?php 
 include $_SERVER['DOCUMENT_ROOT'].'/www/tour/templates/public/tour/left_bar.php';
 ?>
+
+
 	<?php 
 
 	$module = 'ql_tour';

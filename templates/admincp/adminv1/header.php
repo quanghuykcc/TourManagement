@@ -11,7 +11,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/www/tour/autoload_admin.php';
 		<title>Trang quản lý thông tin</title>
         <link rel="shortcut icon" href="/www/tour/files/iconn.png">
         <link rel="stylesheet" type="text/css" href="<?php echo TEMPLATE_ADMIN_URL?>/css/styles.css" media="screen" />
-        <script type="text/javascript" src="/library/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="/www/tour/library/ckeditor/ckeditor.js"></script>
         <script type="text/javascript" src="<?php echo TEMPLATE_ADMIN_URL?>/js/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="<?php echo TEMPLATE_ADMIN_URL?>/js/jquery.validate.min.js"></script>
 		<!-- js datapicker -->

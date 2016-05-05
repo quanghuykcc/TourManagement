@@ -31,7 +31,7 @@
 					while ($aritemct = mysql_fetch_assoc($resultct)){
               	?>
                 <li class="list-group-item">
-                  <i class="fa fa-circle-o-notch fa-spin"></i>&nbsp;
+                  <i class="fa fa-dot-circle-o"></i>&nbsp;
                   <a href="/www/tour?module=ql_tintuc&action=list-news&IdCat=<?php echo $aritemct['IdCat'] ?>" title=""><?php echo $aritemct['NameCat']?></a>
                 </li>
                 <?php }?>
