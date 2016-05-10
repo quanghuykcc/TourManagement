@@ -8,7 +8,7 @@
 			if (isset($_POST['submit'])){
 				$Name = mysql_real_escape_string($_POST['name']);
 				//cap nhat lai du lieu
-				$queryCat = "INSERT INTO category_tour VALUES('NULL','$Name')";
+				$queryCat = "INSERT INTO category_tour(CatTour) VALUES('$Name')";
 				$result = mysql_query($queryCat);
 				if ($result == true){ //update thanh công
 					header("LOCATION: /www/tour/admincp/?module=ql_danhmuc_tour&action=index_cat_tour&msg=Thêm thành công.");

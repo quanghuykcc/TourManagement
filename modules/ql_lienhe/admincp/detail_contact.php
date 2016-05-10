@@ -15,7 +15,7 @@ $Content = $rowcontact['Content'];
                      <h2><span>Thêm tin tức</span></h2>
                         
                      <div class="module-body">
-                       	<form action="" method="post" enctype="multipart/form-data" id="frmAdmin">
+                       	<form action="/www/tour/admincp/?module=ql_lienhe&action=index_contact" method="post" enctype="multipart/form-data" id="frmAdmin">
                             <p>
                                 <label>Chi tiết</label>
                                 <textarea class="ckeditor" name="ChiTiet" required><?php echo $Content ?></textarea>

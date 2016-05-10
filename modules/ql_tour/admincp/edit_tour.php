@@ -163,7 +163,6 @@
 				<p>
 					<label>Loại Tour</label>
 					<select class="input-short" name="LoaiTour">
-						<option>-Chọn loại tour-</option>
 						<?php 
 						
 							$querycat = "SELECT * FROM category_tour"; 

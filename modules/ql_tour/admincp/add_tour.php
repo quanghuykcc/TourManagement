@@ -5,8 +5,6 @@
 		<h2><span>Thêm tour</span></h2>
 		<div class="module-body">
 			<?php 
-				$querytour = "SELECT * FROM tour";
-				$resulttour = mysql_query($querytour);
 					if (isset($_POST['submit'])){
 							//lay du lieu file
 							$filename = $_FILES['HinhBia']['tmp_name'];
@@ -25,21 +23,23 @@
 							$HinhBia			= $ten_file;
 							$NgayTao 			= date('d-m-y');
 							$LoaiTour 			= mysql_real_escape_string($_POST['LoaiTour']);
-							$queryinsert = " 
-								INSERT INTO tour VALUES ('','$TenTour','$LichKhoiHanh','$ThoiGian','$PhuongTien','$GiaTour','$MoTa','$ChiTiet','$HinhBia','$NgayTao','$LoaiTour')";
+							$queryinsert = 
+								"INSERT INTO tour(NameTour, Departure, Time, Means, Price, Description, Detail, Picture, Datecreat, Id_CatTour) VALUES ('','$TenTour','$LichKhoiHanh','$ThoiGian','$PhuongTien','$GiaTour','$MoTa','$ChiTiet','$HinhBia','$NgayTao','$LoaiTour')";
 								$result = mysql_query($queryinsert);
 								if ($result == true){
 									//upload file len host
-									$filename = $_FILES['HinhBia']['tmp_name'];
-									$destination = $_SERVER['DOCUMENT_ROOT']."/www/tour/files/".$ten_file;
-									$ketquaUpload = move_uploaded_file($filename, $destination);
+									if ($HinhBia != "") {
+										$filename = $_FILES['HinhBia']['tmp_name'];
+										$destination = $_SERVER['DOCUMENT_ROOT']."/www/tour/files/".$ten_file;
+										$ketquaUpload = move_uploaded_file($filename, $destination);
+									}						
 									header("LOCATION: /www/tour/admincp?module=ql_tour&action=index_tour&msg=Thêm thành công");
 								} else {
 									echo $baoloi = 'Có lỗi trong quá trình thêm dữ liệu!';
 								}
 					}
-							?>
-			<form action="" method="post" enctype="multipart/form-data" id="frmAdmin">
+			?>
+			<form action="#" method="post" enctype="multipart/form-data" id="frmAdmin">
 				<div>
 					<?php 
 					if (isset($baoloi)){?>
@@ -102,7 +102,7 @@
 							$IdCat = $row1['Id_CatTour'];
 							$NameCat= $row1['CatTour'];
 						?>
-						<option value="<?php echo $IdCat?>"><?php echo $NameCat?></option>
+						<option value=<?php echo $IdCat?>><?php echo $NameCat?></option>
 						<?php }?>
 						
 					</select>
@@ -110,7 +110,7 @@
 				
 				<fieldset>
 					<input class="submit-green" type="submit" name="submit" value="Thêm tin" /> 
-					<input class="submit-gray" type="submit" value="Nhập lại" />
+					<input class="submit-gray" type="button" value="Nhập lại" />
 				</fieldset>
 			</form>
 		</div>
