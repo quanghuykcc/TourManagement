@@ -1,5 +1,6 @@
 <?php 
 //kiểm tra đăng nhập
+    ob_start(); 
 session_start();
 include_once $_SERVER['DOCUMENT_ROOT'].'/www/tour/inc/kiemtradangnhap.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/www/tour/autoload_admin.php';

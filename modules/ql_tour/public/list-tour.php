@@ -24,12 +24,15 @@
 	$querytour = " SELECT * FROM tour WHERE Id_CatTour = $IdCat ORDER BY IdTour DESC 
 	LIMIT $batdau, $sodongtrenmottrang";
 	$resulttour = mysql_query($querytour);
+  $querycat = "SELECT * FROM category_tour WHERE Id_CatTour =$IdCat LIMIT 1";
+  $resultcat = mysql_query($querycat);
+  $cat = mysql_fetch_assoc($resultcat);
 ?>
 <div class="col-md-6 tour">
         <!--begin content-->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <i class="fa fa-list"></i>&nbsp;Tour trong nước
+            <i class="fa fa-list"></i>&nbsp;<?php echo $cat['CatTour']?>
             <a href="" title="">
             </a>
           </div>

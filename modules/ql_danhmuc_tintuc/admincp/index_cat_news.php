@@ -2,7 +2,7 @@
 <div class="bottom-spacing">
 	<!-- Button -->
 	<div class="float-left">
-		<a href="/admincp?module=ql_danhmuc_tintuc&action=add_cat_news" class="button">
+		<a href="/www/tour/admincp?module=ql_danhmuc_tintuc&action=add_cat_news" class="button">
 		<span>Tạo danh mục<img src="<?php echo TEMPLATE_ADMIN_URL?>/images/plus-small.gif" alt="Thêm tin mới"></span>
 		</a>
 	</div>
@@ -45,8 +45,8 @@
 							<td><a href=""><?php echo $name?></a></td>
 						
 							 <td align="center">
-									<a href="/admincp?module=ql_danhmuc_tintuc&action=edit_cat_news&IdCat=<?php echo $idCat?>" title="">Sửa <img src="<?php echo TEMPLATE_ADMIN_URL?>/images/pencil.gif" alt="edit" /></a>
-	                                <a href="/admincp?module=ql_danhmuc_tintuc&action=del_cat_news&IdCat=<?php echo $idCat?>" title="" onclick="return confirm('Bạn có chắc chắc muốn xóa không?')">Xóa
+									<a href="/www/tour/admincp?module=ql_danhmuc_tintuc&action=edit_cat_news&IdCat=<?php echo $idCat?>" title="">Sửa <img src="<?php echo TEMPLATE_ADMIN_URL?>/images/pencil.gif" alt="edit" /></a>
+	                                <a href="/www/tour/admincp?module=ql_danhmuc_tintuc&action=del_cat_news&IdCat=<?php echo $idCat?>" title="" onclick="return confirm('Bạn có chắc chắc muốn xóa không?')">Xóa
 	                         </td>
                         </tr>
 						<?php }?>

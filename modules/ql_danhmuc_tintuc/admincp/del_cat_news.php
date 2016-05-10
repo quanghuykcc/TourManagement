@@ -1,14 +1,14 @@
 <?php 
-include_once $_SERVER['DOCUMENT_ROOT'].'/inc/kiemtradangnhap.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/www/tour/inc/kiemtradangnhap.php';
 
 $IdCat= $_GET['IdCat'];
-$querydel = "DELETE category,news 
-				FROM category INNER JOIN news ON category.IdCat = news.idCat WHERE category.IdCat = $IdCat";
+$querydel = "DELETE FROM category WHERE category.IdCat = $IdCat";
+
 $resultdel = mysql_query($querydel);
 
 if ($resultdel == true){
-	header("LOCATION: /admincp/?module=ql_danhmuc_tintuc&action=index_cat_news"); exit();
+	header("LOCATION: /www/tour/admincp/?module=ql_danhmuc_tintuc&action=index_cat_news&msg=Xóa thành công"); exit();
 } else {
-	echo "<span>Có lỗi trong quá trình xóa</span>";
+		echo "<span>Có lỗi trong quá trình xóa</span>";
 }
 ?>

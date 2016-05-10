@@ -33,7 +33,7 @@
 				</p>
 				<fieldset>
 					<input class="submit-green" type="submit" name="submit" value="Thêm tin" /> 
-					<input class="submit-gray" type="submit" value="Nhập lại" />
+					<input class="submit-gray" type="reset" value="Nhập lại" />
 				</fieldset>
 			</form>
 		</div>

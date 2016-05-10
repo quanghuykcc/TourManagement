@@ -13,7 +13,7 @@
 				$queryCat = "INSERT INTO category VALUES(NULL,'$Name')";
 				$result = mysql_query($queryCat);
 				if ($result == true){ //update thanh công
-					header("LOCATION: /admincp/?module=ql_danhmuc_tintuc&action=index_cat_news&msg=Thêm thành công.");
+					header("LOCATION: /www/tour/admincp/?module=ql_danhmuc_tintuc&action=index_cat_news&msg=Thêm thành công.");
 				} else { //update ko thanh công
 					echo $thongbaoloi = "Có lỗi trong quá trình thêm. Vui lòng thử lại!";	
 				}

@@ -97,7 +97,7 @@
 		                            <!-- kết thúc xử lý Phương tiện -->
 		                              
                                     <td><?php echo $dongiaformat; ?> đồng/người</td>
-                                    <td align="center"><img src="/files/<?php echo $arItemTour['Picture'] ?>" class="hoa" /></td>
+                                    <td align="center"><img src="/www/tour/files/<?php echo $arItemTour['Picture'] ?>" class="hoa" /></td>
                                     <td><?php echo $arItemTour['CatTour']?></td>
                                     <td align="center">
                                         <a href="/www/tour/admincp?module=ql_tour&action=edit_tour&IdTour=<?php echo $arItemTour['IdTour']?>">Sửa <img src="<?php echo TEMPLATE_ADMIN_URL?>/images/pencil.gif" alt="edit" /></a>

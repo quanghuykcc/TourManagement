@@ -85,7 +85,7 @@
 						$destination = $_SERVER['DOCUMENT_ROOT']."/www/tour/files/".$ten_file;
 						$ketquaUpload = move_uploaded_file($filename, $destination);
 					}
-					header("LOCATION: /www/tour/admincp/?module=ql_tour&action=index_tour");
+					header("LOCATION: /www/tour/admincp/?module=ql_tour&action=index_tour&msg=Sửa thành công.");
 					exit();
 				} else {
 					echo $baoloi = 'Có lỗi trong quá trình sửa. Vui lòng thử lại!';

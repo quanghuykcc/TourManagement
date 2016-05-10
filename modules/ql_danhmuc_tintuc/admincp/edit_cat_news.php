@@ -22,7 +22,7 @@
 			$resultUpdate = mysql_query($queryCatUpdate);
 		
 			if ($resultUpdate == true){ //update thanh công
-				header("LOCATION: /admincp/?module=ql_danhmuc_tintuc&action=index_cat_news&msg=Sửa danh mục thành công");
+				header("LOCATION: /www/tour/admincp/?module=ql_danhmuc_tintuc&action=index_cat_news&msg=Sửa danh mục thành công");
 			} else { //update ko thanh công
 				echo "Có lỗi trong quá trình sửa. Vui lòng thử lại!";
 			}

@@ -2,12 +2,17 @@
       <div class="row content-body">
       <div class="col-md-3 left-bar">
       	<?php 
-      		$querycatId = " SELECT * FROM tour WHERE Id_CatTour = 1";	
+      		$query = "SELECT * FROM category_tour LIMIT 1";
+      		$result = mysql_query($query);
+      		$cat = mysql_fetch_assoc($result);
+      		$IdCat = $cat['Id_CatTour'];
+      		$NameCat = $cat['CatTour'];
+      		$querycatId = " SELECT * FROM tour WHERE Id_CatTour = $IdCat";	
 			     $resultCatId = mysql_query($querycatId);
       	?>
         <!--begin left-bar-->
         <div class="panel panel-default tour-trongnuoc ">
-          <div class="panel-heading center-title"><i class="fa fa-list"></i>&nbsp;tour trong nước</div>
+          <div class="panel-heading center-title"><i class="fa fa-list"></i>&nbsp;<?php echo $NameCat ?></div>
           <div class="panel-body">
             <ul class="list-group">
             	<?php 

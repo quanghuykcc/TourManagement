@@ -2,7 +2,7 @@
 <div class="bottom-spacing">
 	<!-- Button -->
 	<div class="float-left">
-		<a href="/admincp?module=ql_danhmuc_tour&action=add_cat_tour" class="button">
+		<a href="/www/tour/admincp?module=ql_danhmuc_tour&action=add_cat_tour" class="button">
 		<span>Tạo danh mục<img src="<?php echo TEMPLATE_ADMIN_URL?>/images/plus-small.gif" alt="Thêm tin mới"></span>
 		</a>
 	</div>
