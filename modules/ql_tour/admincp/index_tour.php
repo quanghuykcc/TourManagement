@@ -33,7 +33,7 @@
 					} else {
 						$batdau = 0;
 					}
-					$querytour = "SELECT * FROM tour INNER JOIN category_tour ON tour.Id_CatTour = category_tour.Id_CatTour ORDER BY IdTour DESC
+					$querytour = "SELECT * FROM tour INNER JOIN category_tour ON tour.Id_CatTour = category_tour.Id_CatTour LEFT JOIN means ON tour.Means = means.MeansId ORDER BY IdTour DESC
 					LIMIT $batdau, $sodongtrenmottrang";
 					$resulttour = mysql_query($querytour);
 					?>
@@ -84,16 +84,7 @@
                                     <td><?php echo $arItemTour['Time']?></td>
                                     
                                     <!-- xử lý Phương tiện -->
-                                    <?php 
-                                    	if ($arItemTour['Means'] == "1"){?>
-                                    		 <td>Ô Tô</td>
-                                    		
-                                   	<?php }
-		                                elseif ($arItemTour['Means'] == "2"){?>
-                                                <td class="center">Xe Máy</td>
-	                                <?php } else {?>
-		                                		<td class="center">Xe Đạp</td>
-		                            <?php }?>
+                                    <td><?php echo $arItemTour['MeansName']?></td>
 		                            <!-- kết thúc xử lý Phương tiện -->
 		                              
                                     <td><?php echo $dongiaformat; ?> đồng/người</td>

@@ -21,7 +21,7 @@
 	} else {
 		$batdau = 0;
 	}
-	$querytour = " SELECT * FROM tour WHERE Id_CatTour = $IdCat ORDER BY IdTour DESC 
+	$querytour = " SELECT * FROM tour LEFT JOIN means ON tour.Means = means.MeansId WHERE Id_CatTour = $IdCat ORDER BY IdTour DESC 
 	LIMIT $batdau, $sodongtrenmottrang";
 	$resulttour = mysql_query($querytour);
   $querycat = "SELECT * FROM category_tour WHERE Id_CatTour =$IdCat LIMIT 1";
@@ -63,7 +63,7 @@
                 </p>
                 <p class="icn-tour">
                   <i class="fa fa-paper-plane"></i>&nbsp;Phương tiện:
-                  <span class="infomation"><?php echo $arItemTour['Means']?></span>
+                  <span class="infomation"><?php echo $arItemTour['MeansName']?></span>
                 </p>
                 <?php 
 	                $Gia = $arItemTour['Price'];

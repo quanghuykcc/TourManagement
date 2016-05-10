@@ -62,9 +62,14 @@
 				<p>
 					<label>Phương Tiện</label>
 					<select class="input-short" name="PhuongTien">
-						<option value="1">Ô Tô</option>
-						<option value="2">Xe Máy</option>
-						<option value="3">Xe Đạp</option>
+						<?php
+							$means = mysql_query("SELECT * FROM means");
+							while($row = mysql_fetch_assoc($means)) {
+						?>
+							<option value=<?php echo $row['MeansId']?>><?php echo $row['MeansName']?></option>
+						<?php 
+							}
+						?>
 					</select>
 				</p>
 				<p>

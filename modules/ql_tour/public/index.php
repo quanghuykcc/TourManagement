@@ -86,7 +86,7 @@
 				$IdCat = $arItemCat['Id_CatTour'];
 				$Name = $arItemCat['CatTour'];
 				//chon 4 tin co danh muc thuoc idCat = $IdCat
-				$querytour = "SELECT * FROM tour WHERE Id_CatTour = $IdCat  ORDER BY IdTour DESC LIMIT 4";	
+				$querytour = "SELECT * FROM tour tr LEFT JOIN means mn ON tr.Means = mn.MeansId WHERE Id_CatTour = $IdCat ORDER BY IdTour DESC LIMIT 4";	
 				$resulttour = mysql_query($querytour);
 				//tao mang chua 4 tin	
 			?>
@@ -128,7 +128,7 @@
                 </p>
                 <p class="icn-tour">
                   <i class="fa fa-paper-plane"></i>&nbsp;Phương tiện:
-                  <span class="infomation"><?php  echo $arItemTour['Means']?></span>
+                  <span class="infomation"><?php  echo $arItemTour['MeansName']?></span>
                 </p>
                 <p class="icn-tour">
                 	<?php 

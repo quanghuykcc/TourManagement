@@ -116,10 +116,23 @@
 				<p>
 					<label>Phương Tiện</label>
 					<select class="input-short" name="PhuongTien">
-						<option>-Chọn phương tiện-</option>
-						<option selected="selected" value="1">Ô Tô</option>
-						<option selected="selected" value="2">Xe Máy</option>
-						<option selected="selected" value="3">Xe Đạp</option>
+						<?php
+							$means = mysql_query("SELECT * FROM means");
+							while($row = mysql_fetch_assoc($means)) {
+								if ($artour['Means'] == $row['MeansId']) {
+						?>
+							<option value=<?php echo $row['MeansId']?> selected><?php echo $row['MeansName']?></option>
+						<?php 
+							}
+							else {
+						?>
+							<option value=<?php echo $row['MeansId']?>><?php echo $row['MeansName']?></option>
+						<?php 
+							}
+						}
+						?>	
+
+
 					</select>
 				</p>
 				<p>

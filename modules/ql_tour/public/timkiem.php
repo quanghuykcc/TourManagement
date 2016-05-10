@@ -10,7 +10,7 @@
           <div class="panel-body">
           	<?php 
           	$tukkhoa = $_GET['q'];
-          	$query = "SELECT * FROM tour WHERE NameTour Like'%$tukkhoa%'";
+          	$query = "SELECT * FROM tour LEFT JOIN means ON tour.Means = means.MeansId WHERE NameTour Like'%$tukkhoa%'";
 					$result = mysql_query($query);
 					if ($result == 0){
 						"Không tìm thấy kết quả";
@@ -38,7 +38,7 @@
                   <span class="infomation"></span>
                 </p>
                 <p class="icn-tour">
-                  <i class="fa fa-paper-plane"></i>&nbsp;Phương tiện: <?php echo $row['Means']	?>
+                  <i class="fa fa-paper-plane"></i>&nbsp;Phương tiện: <?php echo $row['MeansName']	?>
                   <span class="infomation"></span>
                 </p>
                 <p class="icn-tour">
