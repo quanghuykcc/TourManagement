@@ -36,10 +36,12 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/www/tour/autoload_admin.php';
 					$result = mysql_query($query);
 					$arUser = mysql_fetch_assoc($result);
 					$username = $arUser['username'];
+					$iduser = $arUser['IdUser'];
 					$level=$arUser['level'];
 					if ($arUser != false){ //dang nhap dung
 						//tạo session user
 						 $_SESSION['username']=$username;
+						 $_SESSION['iduser'] = $iduser;
             			 $_SESSION['level']=$level;
 						header("LOCATION: /www/tour/admincp/index.php");
 					} else {

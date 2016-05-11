@@ -2,7 +2,6 @@
 	
      $IdCat = $_GET['IdCat'];
 	//thuat toan phan trang
-	$tongsodong = 5;
 	$sodongtrenmottrang = 4;
 	$begin = 0;
 	
@@ -13,7 +12,7 @@
 	$arTongSoDong = mysql_fetch_assoc($result);
 	$tongsodong = $arTongSoDong['tongsodong'];
 	//tinh so trang
-	$sotrang = round($tongsodong/$sodongtrenmottrang, 0 , PHP_ROUND_HALF_UP);
+	$sotrang = ceil($tongsodong/$sodongtrenmottrang);
 	
 	//lay du lieu tu bang 
 	if (isset($_REQUEST['begin'])){
@@ -88,7 +87,7 @@
 							$titletrang = $i+1;
 							$begin = $i * $sodongtrenmottrang; 
 							//0*3| 1*3 | 2*3
-					?>
+					 ?>
                     <li><a  href="/www/tour?module=ql_tour&action=list-tour&IdCat=<?php echo $IdCat ?>&begin=<?php echo $begin?>"><?php echo $titletrang?></a></li>
                   	<?php }?>
                 </ul>

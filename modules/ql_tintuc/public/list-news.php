@@ -17,7 +17,6 @@
           <div class="panel-body ">
           		  <?php
 						//thuat toan phan trang
-						$tongsodong = 5;
 						$sodongtrenmottrang = 4;
 						$begin = 0;
 						
@@ -32,18 +31,17 @@
 						
 						//lay du lieu tu bang 
 						if (isset($_REQUEST['begin'])){
-							$batdau = $_REQUEST['begin'];
+							$begin = $_REQUEST['begin'];
+							$batdau = ($begin-1)*$sodongtrenmottrang;
 						} else {
 							$batdau = 0;
 						}
-						$querytour = "SELECT * FROM news WHERE IdCat = $IdCat  ORDER BY IdTour DESC
+						$querytour = "SELECT * FROM news WHERE IdCat = $IdCat  ORDER BY IdNews DESC
 						LIMIT $batdau, $sodongtrenmottrang";
 						$resulttour = mysql_query($querytour);
 					?>
 		          <?php
-					$queryNews = "SELECT * FROM news WHERE IdCat = $IdCat  ORDER BY IdNews DESC LIMIT 5";
-					$result = mysql_query($queryNews);
-					while ($aritem = mysql_fetch_assoc($result)){
+					while ($aritem = mysql_fetch_assoc($resulttour)){
 						$IdNews = $aritem['IdNews'];
 						$Name= $aritem['Name'];
 						$Description= $aritem['Description'];
@@ -77,11 +75,12 @@
                         <span aria-hidden="true">&laquo;</span>
                       </a>
                     </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
+                    <?php
+                    	for($i=0;$i<$sotrang;$i++){
+                    		$j= $i+1;
+                    ?>
+                    <li><a href="/www/tour/?module=ql_tintuc&action=list-news&IdCat=2&begin=<?php echo $j?>"><?php echo $j?></a></li>
+                    <?php }?>
                     <li>
                       <a href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
