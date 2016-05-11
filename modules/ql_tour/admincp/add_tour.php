@@ -24,7 +24,7 @@
 							$NgayTao 			= date('d-m-y');
 							$LoaiTour 			= mysql_real_escape_string($_POST['LoaiTour']);
 							$queryinsert = 
-								"INSERT INTO tour(NameTour, Departure, Time, Means, Price, Description, Detail, Picture, Datecreat, Id_CatTour) VALUES ('','$TenTour','$LichKhoiHanh','$ThoiGian','$PhuongTien','$GiaTour','$MoTa','$ChiTiet','$HinhBia','$NgayTao','$LoaiTour')";
+								"INSERT INTO tour(NameTour, Departure, Time, Means, Price, Description, Detail, Picture, Datecreat, Id_CatTour) VALUES ('$TenTour','$LichKhoiHanh','$ThoiGian','$PhuongTien','$GiaTour','$MoTa','$ChiTiet','$HinhBia','$NgayTao','$LoaiTour')";
 								$result = mysql_query($queryinsert);
 								if ($result == true){
 									//upload file len host

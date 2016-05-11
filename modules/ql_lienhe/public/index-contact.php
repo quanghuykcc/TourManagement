@@ -1,5 +1,6 @@
 <?php 
 //lay du lieu khi nguoi dung submit
+$tb = '';
 if (isset($_POST['submit'])){ 
 	$hoten     = mysql_real_escape_string($_POST['hoten']);
 	$email     = mysql_real_escape_string($_POST['email']);
@@ -9,9 +10,16 @@ if (isset($_POST['submit'])){
 	//thêm dữ liệu vào db
 	$query = "INSERT INTO contact VALUES(NULL,'$hoten','$email','$dienthoai','$noidung','$ngaytao')";
 	$result = mysql_query($query);
+	if ($result == true) {
+		$tb = 'Đã gửi thành công, cảm ơn bạn đã đóng góp phản hồi cho chúng tôi!';
+	}
+	else {
+		$tb = 'Đã có lỗi xảy ra! Vui lòng điền đầy đủ thông tin!';
+	}
 	
 }
 ?>
+
 <div class="col-md-6 tour">
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -39,7 +47,9 @@ if (isset($_POST['submit'])){
 							<div class="input-group">
 								<input class="btn btn-success" type="submit" name="submit" value="Gửi liên hệ" />
 								<span> </span>
-								<input class="btn btn-info" type="reset" value="Nhập lại"/>
+								<input class="btn btn-info" type="reset" value="Nhập lại"/> <br/>
+								<span><?php echo $tb ?></span>
+
 							</div>
 						</form>
 					</div>

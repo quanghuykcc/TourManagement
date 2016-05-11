@@ -57,7 +57,7 @@
 							<th style="width:20%">Tên tin</th>
 							<th style="width:20%">Ngày Tạo</th>
 							<th style="width:16%; text-align: center;">Danh Mục</th>
-							<th style="width:16%">Người tạo</th>
+							<th style="width:16%">Hình Ảnh</th>
 							<th style="width:11%; text-align: center;">Chức năng</th>
 						</tr>
 					</thead>
@@ -81,7 +81,7 @@
 							<td><a href="/www/tour/admincp?module=ql_tintuc&action=edit_news&idNews=<?php echo $IdNews?>"><?php echo $Name ?></a></td>
 							<td><?php echo $DateCreate?></td>
 							<td><?php echo $TenDM?></td>
-							<td align="center"><a href="/www/tour/admincp?module=ql_tintuc&action=edit_news&idNews=<?php echo $IdNews?>" ></a><img src="/files/<?php echo $Picture?>" class="hoa" /></a></td>
+							<td align="center"><img src="/www/tour/files/<?php echo $Picture?>" class="hoa" /></a></td>
 							<td align="center">
 								<a href="/www/tour/admincp?module=ql_tintuc&action=edit_news&idNews=<?php echo $IdNews?>">Sửa <img src="<?php echo TEMPLATE_ADMIN_URL?>/images/pencil.gif" alt="edit" /></a>
 								<a href="/www/tour/admincp?module=ql_tintuc&action=del_news&idNews=<?php echo $IdNews?>" title="" onclick="return confirm('Bạn có chắc chắc muốn xóa không?')">Xóa
