@@ -49,8 +49,23 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/www/tour/autoload_admin.php';
                     <div class="grid_12">
                         <div id="logo">
                             <ul id="nav">
-                                <li id="current"><a href="/www/tour/admincp?module=ql_tour&action=index_about">Quản trị</a></li>
-                                <li><a href="/www/tour/admincp?module=ql_users&action=index_user">Tài khoản</a></li>
+                                <?php
+                                    if(isset($_GET['current'])){
+                                        if($_GET['current']=="qt"){
+                                            $qt ="id='current'";
+                                            $tk="";
+                                        }else if($_GET['current']=="tk"){
+                                            $qt ="";
+                                            $tk="id='current'";
+                                        }
+                                       
+                                    }else{
+                                        $qt ="id='current'";
+                                        $tk="";
+                                    } 
+                                ?>
+                                <li <?php echo $qt ?>><a href="/www/tour/admincp?module=ql_tour&action=index_about&current=qt">Quản trị</a></li>
+                                <li <?php echo $tk ?>><a href="/www/tour/admincp?module=ql_users&action=index_user&current=tk">Tài khoản</a></li>
                             </ul>
                         </div><!-- End. #Logo -->
                     </div><!-- End. .grid_12-->
