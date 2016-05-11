@@ -38,6 +38,7 @@ if (isset($_POST['submit'])){
 							<textarea placeholder="Gõ nội dung liên hệ..."  name="noidung" class="form-control" rows="5" required></textarea>
 							<div class="input-group">
 								<input class="btn btn-success" type="submit" name="submit" value="Gửi liên hệ" />
+								<span> </span>
 								<input class="btn btn-info" type="reset" value="Nhập lại"/>
 							</div>
 						</form>

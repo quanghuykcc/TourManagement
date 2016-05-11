@@ -29,10 +29,9 @@
 	$querymatour="SELECT * FROM tour WHERE IdTour='$matour'";
 	$resultmatour=mysql_query($querymatour);
 	$rowmatour =mysql_fetch_assoc($resultmatour);
-	$tentour = $rowmatour['IdTour'];
 	$tentour = $rowmatour['NameTour'];
 	$gia = $rowmatour['Price'];
-
+  $tb = 'Để đăng ký tour, vui lòng điền các thông tin bên dưới';
 //Thực insert khi đặt tour
 if(isset($_POST['thanhtoan'])){
 		$tenthat	        =$_REQUEST['tenthat'];
@@ -42,29 +41,21 @@ if(isset($_POST['thanhtoan'])){
 		$songuoilon 		=$_REQUEST['songuoilon'];
 		$sotre				=$_REQUEST['sotre'];
 		$ngaydi				=$_REQUEST['ngaydi'];
-		$trangthai			= "chưa";
+		$trangthai			= "Chưa";
 		$httt				=$_REQUEST['httt'];
-		$tongtien			=$songuoilon*$gia+$sotre*$gia/2;
+		$tongtien		=$songuoilon*$gia+$sotre*$gia/2;
 		$query2= "INSERT INTO dattour 
+          (HoTen, Email, DiaChi, SoDT, IdTour, SoNguoiLon, SoTreEm, NgayDi, NgayDat, TTThanhToan, IdThanhToan, TongTien)
 					VALUES
-					(NULL,'$tenthat','$email','$diachithat','$sodt','$matour','$songuoilon','$sotre','$ngaydi','$now1','Chưa','$httt','$tongtien')";
+					('$tenthat','$email','$diachithat','$sodt','$matour','$songuoilon','$sotre','$ngaydi','$now1','$trangthai','$httt','$tongtien')";
 		$result2=mysql_query($query2);
 	if($result2==true) {
   		header("LOCATION: /www/tour?module=ql_tour&action=index&msg=Bạn đã đặt tour thành công");
-	 if($httt==3){
-	 //chuyen sang trang ngan luong 
-	 
-				$urlNganLuong = "https://www.nganluong.vn/button_payment.php?receiver=giang359757@gmail.com&product_name=$matour&price=$tongtien&return_url=dulich.php&comments=Ngày đặt $now1";
-				//echo $urlNganLuong ;
-				header("LOCATION:$urlNganLuong");
-	 }
-	 else{
-	 	header("LOCATION: /www/tour?module=ql_tour&action=index&msg=Bạn đã đặt tour thành công");
-	 }
 	}
-	else { $tb= 'Đã có lỗi xảy ra, mời nhập lại. Lưu ý: Bạn phải nhập đầy đủ các thông tin trên !';}
+	else { $tb= 'Đã có lỗi xảy ra! Vui lòng điền đầy đủ các thông tin bên dưới' ;}
 }
 ?>
+
  <div class="col-md-6 tour">
         <!--begin content-->
         <div class="panel panel-default">
@@ -77,43 +68,44 @@ if(isset($_POST['thanhtoan'])){
                 	<p> 
                 	<span style="color:red;">Bạn đã chọn tour:</span> <span style="color:blue"><?php echo $tentour ?></span><br/>
                 	<span style="color:red;">Giá :<?php echo $gia ?>/ người</span> <span style="color:blue">(trẻ dưới 6 tuổi được giảm 50% giá tour).</span><br />
-                    Để liên hệ đặt tour du lịch vui lòng điền đầy đủ thông tin bên dưới</p>
+                  <span id="msg"><?php echo $tb ?></span><br/>          
+                </p>
                 </div>
                 <form class="form-horizontal" method="post">
                       <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 col-md-3 control-label">Họ & Tên</label>
                         <div class="col-sm-10 col-md-5">
-                          <input type="text" class="form-control" name="tenthat" value="" id="inputEmail3" placeholder="Họ Tên">
+                          <input type="text" class="form-control" name="tenthat" value="" id="inputEmail3" placeholder="Họ Tên" required>
                         </div>
                       </div>
                        <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 col-md-3 control-label">Địa Chỉ</label>
                         <div class="col-sm-10 col-md-5">
-                          <input type="text" class="form-control" name="diachithat"  value="" id="inputEmail3" placeholder="Địa Chỉ">
+                          <input type="text" class="form-control" name="diachithat"  value="" id="inputEmail3" placeholder="Địa Chỉ" required>
                         </div>
                       </div>
                        <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 col-md-3 control-label">Email</label>
                         <div class="col-sm-10 col-md-5">
-                          <input type="email" class="form-control " name="email"  value="" id="inputEmail3" placeholder="Email">
+                          <input type="email" class="form-control " name="email"  value="" id="inputEmail3" placeholder="Email" required>
                         </div>
                       </div>
                        <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 col-md-3 control-label">Số Điện Thoại</label>
                         <div class="col-sm-10 col-md-5">
-                          <input  type="text" name="sodt" class="form-control "  value="" id="inputEmail3" placeholder="Số Điện Thoại">
+                          <input  type="number" name="sodt" class="form-control "  value="" id="inputEmail3" placeholder="Số Điện Thoại" required>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 col-md-3 control-label">Số Người Lớn</label>
                         <div class="col-sm-10 col-md-5">
-                          <input  type="number" name="songuoilon" class="form-control "  value="" id="inputEmail3" placeholder="Số Người Lớn">
+                          <input  type="number" name="songuoilon" class="form-control "  value="" id="inputEmail3" placeholder="Số Người Lớn" required>
                         </div>
                       </div>
                       <div class="form-group">
                         <label for="inputEmail3" class="col-sm-2 col-md-3 control-label">Số Trẻ Em</label>
                         <div class="col-sm-10 col-md-5">
-                          <input  type="number" name="sotre"  class="form-control "  value="" id="inputEmail3" placeholder="Số Trẻ Em">
+                          <input  type="number" name="sotre"  class="form-control "  value="" id="inputEmail3" placeholder="Số Trẻ Em" required>
                         </div>
                       </div>
                        <div class="form-group">
@@ -133,7 +125,7 @@ if(isset($_POST['thanhtoan'])){
 								$resultHTTT=mysql_query($queryHTTT);
 								while($rowHTTT=mysql_fetch_array($resultHTTT)){
                             ?>
-                            <option value="<?php echo $rowHTTT['IdThanhToan'] ?>"><?php echo $rowHTTT['TenThanhToan'] ?></option>
+                            <option value=<?php echo $rowHTTT['IdThanhToan'] ?>><?php echo $rowHTTT['TenThanhToan'] ?></option>
                             <?php }?>
                           </select>
                         </div>

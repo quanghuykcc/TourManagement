@@ -21,7 +21,7 @@
                         
                         <div class="module-body">
                         	<p class="p">
-                                <strong>Phần mềm</strong> được viết trên nền tảng PHP&MySQL <br />
+                                Phần mềm được viết trên nền tảng PHP&MySQL <br />
                                 <strong>Học viên thực hiện: </strong>Lê Viết Nhựt & Hà Quang Huy<br />
                                 <strong>Email: </strong>levietnhut2012@gmail.com<br /> 
                                 <strong>Phone: </strong>01687184516<br />
