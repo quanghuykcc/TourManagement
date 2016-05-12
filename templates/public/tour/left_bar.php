@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-md-6">
                   <a href="" title="">
-                    <p class="text-left">Đèo Hải Vân - Lăng Cô</p>
+                    <p class="text-left">Đèo Hải Vân - Đà Nẵng</p>
                   </a>
                 </div>
               </div>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="col-md-6">
                   <a href="" title="">
-                    <p class="text-left">Đèo Hải Vân - Lăng Cô</p>
+                    <p class="text-left">Phố Cổ Hội An - Quảng Nam</p>
                   </a>
                 </div>
               </div>
@@ -72,7 +72,7 @@
                 </div>
                 <div class="col-md-6">
                   <a href="" title="">
-                    <p class="text-left">Đèo Hải Vân - Lăng Cô</p>
+                    <p class="text-left">Tháp Mỹ Sơn - Quảng Nam</p>
                   </a>
                 </div>
               </div>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-md-6">
                   <a href="" title="">
-                    <p class="text-left">Đèo Hải Vân - Lăng Cô</p>
+                    <p class="text-left">Vịnh Lăng Cô - Huế</p>
                   </a>
                 </div>
               </div>

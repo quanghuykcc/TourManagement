@@ -21,15 +21,16 @@
 						$begin = 0;
 						
 						$query = "
-							SELECT count(IdNews) AS tongsodong FROM news
+							SELECT count(IdNews) AS tongsodong FROM news WHERE IdCat = '$IdCat'
 						";
 						$result = mysql_query($query);
 						$arTongSoDong = mysql_fetch_assoc($result);
 						$tongsodong = $arTongSoDong['tongsodong'];
 						//tinh so trang
-						$sotrang = round($tongsodong/$sodongtrenmottrang, 0 , PHP_ROUND_HALF_UP);
+						$sotrang = ceil($tongsodong/$sodongtrenmottrang);
 						
 						//lay du lieu tu bang 
+            $begin = 1;
 						if (isset($_REQUEST['begin'])){
 							$begin = $_REQUEST['begin'];
 							$batdau = ($begin-1)*$sodongtrenmottrang;
@@ -55,7 +56,7 @@
                 <div class="content-news col-md-12 clearfix">
                   <div class="content-img col-md-4 col-lg-4 col-sm-12 col-xs-12 clearfix">
                     <a href="">
-                    <img  src="/files/<?php echo $Picture?>"  class="img-rounded img-responsive" alt="Responsive image">
+                    <img  src="/www/tour/files/<?php echo $Picture?>"  class="img-rounded img-responsive" alt="Responsive image">
                     </a>
                   </div>
                   <!--list news left-->
@@ -71,20 +72,32 @@
               <nav><!--begin Phân trang-->
                  <ul class="pagination">
                     <li>
-                      <a href="#" aria-label="Previous">
+                      <?php
+                        $previousPage = $begin - 1;
+                        if (($previousPage) >= 1) {
+                      ?>
+
+                      <a href="/www/tour/?module=ql_tintuc&action=list-news&IdCat=<?php echo $IdCat?>&begin=<?php echo $previousPage?>">
                         <span aria-hidden="true">&laquo;</span>
                       </a>
+                      <?php } ?>
                     </li>
                     <?php
                     	for($i=0;$i<$sotrang;$i++){
                     		$j= $i+1;
                     ?>
-                    <li><a href="/www/tour/?module=ql_tintuc&action=list-news&IdCat=2&begin=<?php echo $j?>"><?php echo $j?></a></li>
+                    <li><a href="/www/tour/?module=ql_tintuc&action=list-news&IdCat=<?php echo $IdCat?>&begin=<?php echo $j?>"><?php echo $j?></a></li>
+                    
                     <?php }?>
                     <li>
-                      <a href="#" aria-label="Next">
+                      <?php
+                        $nextPage = $begin + 1;
+                        if (($nextPage) <= $sotrang) {
+                      ?>
+                      <a href="/www/tour/?module=ql_tintuc&action=list-news&IdCat=<?php echo $IdCat?>&begin=<?php echo $nextPage?>">
                         <span aria-hidden="true">&raquo;</span>
                       </a>
+                      <?php } ?>
                     </li>
                 </ul>
             </nav><!--end Phân trang-->

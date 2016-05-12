@@ -26,8 +26,6 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <i class="fa fa-list"></i>&nbsp;TIN TỨC NỔI BẬT
-            <a href="/www/tour?module=ql_tintuc&action=list-tin&IdCat=" title="">
-            </a>
           </div>
           <div class="panel-body ">
             <div class="row news-travel">
