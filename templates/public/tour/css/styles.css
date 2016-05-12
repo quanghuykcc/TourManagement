@@ -23,8 +23,13 @@ header .nav > .active{
 header .nav > li {
     padding: 5px;
 }
-header .dropdown-menu > li > a{
-
+header .dropdown-menu  {
+	border-radius:8px;
+}
+header .dropdown-menu > li {
+	margin:10px;
+}
+header .dropdown-menu > li :hover{
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
   background-color: transparent !important;

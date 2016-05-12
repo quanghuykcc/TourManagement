@@ -15,7 +15,7 @@
 			@$thongbao = $_GET['msg'];
 			if (isset($thongbao)){
 		?>
-		<span class="notification n-success"  style="width:43%"><?php echo $thongbao?></span>
+		<span class="notification n-success"  style="width:43%;"><?php echo $thongbao?></span>
 		<?php }?>
 	</div>
 	<div class="module">

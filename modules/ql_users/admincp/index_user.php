@@ -59,10 +59,10 @@
                                 </tr>
                             </tbody>
                         </table>
-                         <a href="/www/tour/admincp/?module=ql_users&action=edit_user" class="button">
+                         <a href="/www/tour/admincp/?module=ql_users&action=edit_user&current=tk" class="button">
                         <span>Chỉnh sửa thông tin</span>
                         </a>
-                         <a href="/www/tour/admincp/?module=ql_users&action=change_pass" class="button" style="margin-left: 20px;">
+                         <a href="/www/tour/admincp/?module=ql_users&action=change_pass&current=tk" class="button" style="margin-left: 20px;">
                         <span>Thay đổi mật khẩu</span>
                         </a>
                         </form>

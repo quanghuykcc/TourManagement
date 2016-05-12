@@ -10,11 +10,14 @@
           <div class="panel-body">
           	<?php 
           	$tukkhoa = $_GET['q'];
-          	$query = "SELECT * FROM tour LEFT JOIN means ON tour.Means = means.MeansId WHERE NameTour Like'%$tukkhoa%'";
+          	$query = "SELECT * FROM tour LEFT JOIN means ON tour.Means = means.MeansId WHERE NameTour Like'%$tukkhoa%' OR Price < $tukkhoa";
 					$result = mysql_query($query);
-					if ($result == 0){
-						"Không tìm thấy kết quả";
-						
+					if (mysql_num_rows($result)==0){
+            ?>
+						 <div>
+                <span class="notification n-success"  style="width:43%;color: red;font-weight: bold;">Không tìm thấy kết quả nào.</span>
+              </div>
+					<?php
 					}else{
 						while ($row = mysql_fetch_assoc($result)){
           
@@ -54,6 +57,7 @@
             </div>
             <!--end tour 1-->
             <?php }}?>
+             
           </div>
         </div>
           

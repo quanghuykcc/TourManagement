@@ -6,10 +6,10 @@
 			<div class="panel-body">
 				<form action="" method="post">
 					<div class="form-group">
-						<input type="text" class="form-control" name="keyword" id="timkiem" placeholder="Từ khóa tìm kiếm">
+						<input type="text" class="form-control" name="keyword" id="timkiem" placeholder="Tên tour hoặc giá nhỏ hơn">
 					</div>
 					<input type="submit" name="btnsearch" class="btn btn-success" value="Tìm Kiếm" />
-					<input type="submit" class="btn btn-info" value="Nhập Lại" />
+					<input type="reset" class="btn btn-info" value="Nhập Lại" />
 				</form>
 			</div>
 			<!--end tim kiem -->

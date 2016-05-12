@@ -32,12 +32,12 @@
 				$resultUpdate = mysql_query($queryUserUpdate);
 			
 				if ($resultUpdate == true){ //update thanh công
-					header("LOCATION: /www/tour/admincp/?module=ql_users&action=index_user&msg=Cập nhật thông tin thành công");
+					header("LOCATION: /www/tour/admincp/?module=ql_users&action=index_user&current=tk&msg=Cập nhật thông tin thành công");
 				} else { //update ko thanh công
 					echo "Có lỗi trong quá trình sửa. Vui lòng thử lại!";
 				}
 			}else{
-				header("LOCATION: /www/tour/admincp/?module=ql_users&action=edit_user&msg=Mật khẩu chưa đúng");
+				header("LOCATION: /www/tour/admincp/?module=ql_users&action=edit_user&current=tk&msg=Mật khẩu chưa đúng");
 
 			}
 			
@@ -75,8 +75,7 @@
 				</p>
 				<fieldset>
 					<input class="submit-green" type="submit" name="submit" value="Cập Nhật" /> 
-					<input class="submit-gray" type="reset" value="Nhập lại" />
-					<a href="/www/tour/admincp/?module=ql_users&action=index_user"  style="text-decoration: none;">
+					<a href="/www/tour/admincp/?module=ql_users&action=index_user&current=tk"  style="text-decoration: none;">
 						<input class="submit-green" type="button" name="back" value="Trở về" /> 
 					</a>
 				</fieldset>

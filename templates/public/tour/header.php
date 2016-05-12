@@ -7,11 +7,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Du lịch Đà Nẵng</title>
+    <title>Du lịch</title>
 	<link rel="shortcut icon" href="/www/tour/files/iconn.png">
     <!-- Bootstrap -->
     
-    <link href="<?php echo TEMPLATE_PUBLIC_URL ?>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo TEMPLATE_PUBLIC_URL ?>/css/bootstrap.css" rel="stylesheet">
     <link href="<?php echo TEMPLATE_PUBLIC_URL ?>/css/styles.css" rel="stylesheet">
     <link href="<?php echo TEMPLATE_PUBLIC_URL ?>/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="<?php echo TEMPLATE_PUBLIC_URL ?>/js/jquery1.11.1.min.js"></script>
@@ -25,13 +25,6 @@
     <script type="text/javascript" src="<?php echo TEMPLATE_ADMIN_URL?>/js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="<?php echo TEMPLATE_ADMIN_URL?>/js/jquery.validate.min.js"></script>
     <!--Start of Zopim Live Chat Script-->
-    <script type="text/javascript">
-      window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-      d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-      _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
-      $.src='//v2.zopim.com/?2gSKrKYT4qIhPnXhR9XLJkz9KrfKSc6P';z.t=+new Date;$.
-      type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
-    </script>
     <!--End of Zopim Live Chat Script-->
   </head>
   <body>

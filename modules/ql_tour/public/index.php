@@ -38,9 +38,9 @@
 					
 			 ?>
               <div class="col-md-6 news-left">
-                <a href="/www/tour?module=ql_tintuc&action=detail-news&IdNews=<?php echo $arTin1['IdNews']?>&IdCat=<?php echo $arTin1['IdCat'] ?>" title=""><img class="img-rounded" src="/www/tour/files/<?php echo $arTin1['Picture']?>" alt="" /></a>
+                <a href="/www/tour?module=ql_tintuc&action=detail-news&idNews=<?php echo $arTin1['IdNews']?>&IdCat=<?php echo $arTin1['IdCat'] ?>" title=""><img class="img-rounded" src="/www/tour/files/<?php echo $arTin1['Picture']?>" alt="" /></a>
                 <h1>
-                  <a href="/www/tour?module=ql_tintuc&action=detail-news&IdNews=<?php echo $arTin1['IdNews']?>&IdCat=<?php echo $arTin1['IdCat'] ?>" title=""><?php  echo $arTin1['Name'] ?></a>
+                  <a href="/www/tour?module=ql_tintuc&action=detail-news&idNews=<?php echo $arTin1['IdNews']?>&IdCat=<?php echo $arTin1['IdCat'] ?>" title=""><?php  echo $arTin1['Name'] ?></a>
                 </h1>
                 <p class="text-muted"><?php echo $arTin1['Description']?></p>
               </div>
@@ -55,10 +55,10 @@
               <div class="col-md-6  news">
                 <div class="new-items">
                   <div class="images-tintuc pull-left">
-                    <a href="/www/tour?module=ql_tintuc&action=detail-news&IdNews=<?php echo $arTin['IdNews']?>&IdCat=<?php echo $arTin1['IdCat'] ?>" title=""><img class="img-rounded" src="/www/tour/files/<?php echo $arTin['Picture']?>" alt="" /></a>
+                    <a href="/www/tour?module=ql_tintuc&action=detail-news&idNews=<?php echo $arTin['IdNews']?>&IdCat=<?php echo $arTin1['IdCat'] ?>" title=""><img class="img-rounded" src="/www/tour/files/<?php echo $arTin['Picture']?>" alt="" /></a>
                   </div>
                   <div class="img-description pull-right">
-                    <h4><a href="/www/tour?module=ql_tintuc&action=detail-news&IdNews=<?php echo $arTin['IdNews']?>&IdCat=<?php echo $arTin1['IdCat'] ?>" title=""><?php  echo $arTin['Name'] ?></a></h4>
+                    <h4><a href="/www/tour?module=ql_tintuc&action=detail-news&idNews=<?php echo $arTin['IdNews']?>&IdCat=<?php echo $arTin1['IdCat'] ?>" title=""><?php  echo $arTin['Name'] ?></a></h4>
                     <p class="text-muted"><?php echo $arTin['NameCat'];?>| <i class="fa fa-calendar"></i>&nbsp;<?php echo $arTin['CreateBy'];?></p>
                   </div>
                   <div class="clearfix"></div>
